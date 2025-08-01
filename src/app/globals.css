@@ -24,6 +24,7 @@
   --color-purple-figma: #AF52DE;
   --color-pink-figma: #FF2D55;
   --color-brown-figma: #A2845E;
+  --color-input-background: #262626;
 }
 
 @media (prefers-color-scheme: dark) {
