@@ -23,10 +23,16 @@ const TaskForm: FC<TTaskFormProps> = ({
 }) => {
   const [title, setTitle] = useState(initialTitle);
   const [color, setColor] = useState(initialColor);
+  const [error, setError] = useState<string | null>(null);
   const router = useRouter();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!title.trim()) {
+      setError('Title is required.');
+      return;
+    }
+
     await onSubmit({ title, color });
   };
 
@@ -46,6 +52,7 @@ const TaskForm: FC<TTaskFormProps> = ({
           onChange={(e) => setTitle(e.target.value)}
           required
         />
+        {error && <p className="text-red-500 text-sm mt-1 ml-1">{error}</p>}
       </div>
 
       <div>
