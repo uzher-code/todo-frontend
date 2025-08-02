@@ -61,7 +61,7 @@ export default function Home() {
     if (!taskToDelete) return;
 
     try {
-      await fetch(`/tasks/${taskToDelete.id}`, { method: 'DELETE' });
+      await fetch(`http://localhost:4000/tasks/${taskToDelete.id}`, { method: 'DELETE' });
       setTasks(prev => prev.filter(t => t.id !== taskToDelete.id));
       setTaskToDelete(null);
     } catch (error) {
