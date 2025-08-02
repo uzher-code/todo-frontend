@@ -5,6 +5,8 @@ import TaskCard from "@/app/components/TaskCard";
 import { useRouter } from "next/navigation";
 import { useEffect, useMemo, useState } from "react";
 import { MdAddCircleOutline } from "react-icons/md";
+import { TiClipboard } from "react-icons/ti";
+
 
 
 
@@ -95,8 +97,11 @@ export default function Home() {
           tasks.length === 0
             ? <>
               <hr />
-              <div className="text-center text-gray-200 mt-10">You don&apos;t have any tasks registered yet</div>
-              <div className="text-center text-gray-400">Create tasks and organize your to-do items</div>
+              <div className="flex flex-col items-center mt-10 space-y-2">
+                <TiClipboard size={48} className="text-gray-600 mb-2" />
+                <div className="text-center text-gray-200 font-semibold">You don't have any tasks registered yet</div>
+                <div className="text-center text-gray-400">Create tasks and organize your to-do items</div>
+              </div>
             </>
             : (
 
